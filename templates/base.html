@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        WeZdoms
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <header>
+        {% load static %}
+        <img src="{% static 'logo_wezdoms.png' %}" alt="Logo">
+        <h1>Место где мы делимся личными мудростями</h1>
+    </header>
+    <nav>
+        <a href=""> HOME </a> &nbsp;
+        <a href=""> WISDOMS </a> &nbsp;
+        <a href=""> LOGIN </a> &nbsp;
+        <a href=""> REGISTER </a> &nbsp;
+    </nav>
+    {% block sidebar %}
+            Page sidebar content
+    {% endblock %}
+    <section>
+        {% block content %}
+            Page content here
+        {% endblock %}
+    </section>
+    <footer>
+        <h5>Не важно где мы, важнее смысл наших слов</h5>
+    </footer>
+</body>
+</html>
