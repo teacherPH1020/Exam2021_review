@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     ### place to add apps
+    'rel',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -132,7 +133,7 @@ STATIC_URL = '/static/'
 #]
 
 STATICFILES_DIRS = [
-    BASE_DIR \ "static",
+    BASE_DIR / "static",
 ]
 
 # Default primary key field type
