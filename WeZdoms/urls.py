@@ -20,6 +20,7 @@ from rel import views
 
 urlpatterns = [
     path('rel/', views.index, name='rel'),
-    path('', TemplateView.as_view(template_name="home.html")),
+    path('rel/form/', views.contact_form, name='rel_cform'),
+    path('', TemplateView.as_view(template_name="home.html", extra_context ={'b':" "})),
     path('admin/', admin.site.urls),
 ]

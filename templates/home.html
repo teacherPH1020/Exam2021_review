@@ -13,6 +13,10 @@
         It is nice to see you!
         Welcome to shared wisdom from all of us.
         WE and gen Z.
-        See public wisdoms or register as a memeber to add yours and find more.
+        See public wisdoms or register as a memeber to add yours and find more.<br>
+
     </article>
+    {% firstof a b c "all empty" %}
+    {% firstof a b c as var %}
+    <p>{{ var|wordwrap:5 }}</p>
 {% endblock %}

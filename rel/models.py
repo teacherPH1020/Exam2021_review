@@ -72,3 +72,13 @@ class Diploma(models.Model):
 
     def __str__(self):
         return f"Diploma {self.title}"
+
+
+class Contact(models.Model):
+    name = models.CharField(max_length=24, blank=True)
+    email = models.EmailField()
+    adres = models.TextField(max_length=1024, null=True)
+    comment = models.TextField(max_length=1024, null=True)
+
+    def __str__(self):
+        return f"{self.name} contact info"

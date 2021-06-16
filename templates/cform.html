@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}
+        WeZdoms form
+{% endblock %}
+
+{% block content %}
+    <article>
+        <form method="post">
+            {% csrf_token %}
+            {{ cform.as_p }}
+            <input type="submit" value="Submit" name="cform1">
+        </form>
+    </article>
+{% endblock %}
