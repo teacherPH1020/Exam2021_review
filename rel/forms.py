@@ -1,5 +1,14 @@
 from django import forms
-from .models import Contact
+from .models import Contact, Item
+
+
+
+class Item_Form(forms.ModelForm):
+    class Meta:
+        model = Item
+        fields = "__all__"
+        labels = {"name":"food"}
+        widgets = {'name' : forms.Textarea()}
 
 
 def no_vowels(value):

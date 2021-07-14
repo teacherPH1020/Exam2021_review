@@ -3,6 +3,30 @@ from django.shortcuts import render, redirect
 from .view import add
 from django.http import HttpResponse
 from .forms import ContactForm
+import json
+
+from django.views import View
+from django.views.generic.edit import CreateView
+from .models import Item
+from .forms import Item_Form
+from django.urls import reverse_lazy
+
+class ItemCreation(CreateView):
+    model = Item
+    form_class = Item_Form
+    #success_url = reverse_lazy("item:index")
+
+class Paint(View):
+    color = "Color"
+
+    def get(self, request):
+        return HttpResponse(json.dumps({f'{self.color}':f'{str(request.method)}'}))
+
+class Red(Paint):
+    color = "Red"
+
+class Blue(Paint):
+    color = "Blue"
 
 #from django.http import request as Request
 
