@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block sidebar %}
+    <i>Content owner: {{content_owner}}</i>
     &nbsp;
+    {{request.path}}
+
 {% endblock %}
 
 {% block content %}
@@ -14,7 +17,12 @@
         Welcome to shared wisdom from all of us.
         WE and gen Z.
         See public wisdoms or register as a memeber to add yours and find more.<br>
-
+        <p>
+            {{user}} and
+            {% for p in perm %}
+                 {{p}}<br>
+            {% endfor %}
+        </p>
     </article>
     {% firstof a b c "all empty" %}
     {% firstof a b c as var %}

@@ -30,6 +30,7 @@ urlpatterns = [
     path('color/paint', views.Paint.as_view()),
     path('rel/', views.index, name='rel'),
     path('rel/form/', views.contact_form, name='rel_cform'),
+    path('rel/date_form/', views.date_form, name='rel_cform'),
     path('', TemplateView.as_view(template_name="home.html", extra_context ={'b':" "})),
     path('admin/', admin.site.urls),
     path('__debug__/', include(debug_toolbar.urls)),

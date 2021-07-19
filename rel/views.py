@@ -2,13 +2,16 @@ from django.shortcuts import render, redirect
 
 from .view import add
 from django.http import HttpResponse
-from .forms import ContactForm
+from .forms import ContactForm, SimpleForm
 import json
 
 from django.views import View
 from django.views.generic.edit import CreateView
 from .models import Item
 from .forms import Item_Form
+
+from articles.views
+
 from django.urls import reverse_lazy
 
 class ItemCreation(CreateView):
@@ -53,3 +56,12 @@ def contact_form(request):
         cform = ContactForm()
     return render(request,"cform.html",{'cform':cform})
 
+def date_form(request):
+    if request.method == 'POST':
+        cform = SimpleForm(request.POST)
+        if cform.is_valid():
+            return HttpResponse('<h1>Thank you!</h1>')
+
+    else:
+        cform = SimpleForm()
+    return render(request,"cform.html",{'cform':cform})
