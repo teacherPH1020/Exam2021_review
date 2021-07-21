@@ -8,15 +8,12 @@ import json
 from django.views import View
 from django.views.generic.edit import CreateView
 from .models import Item
-from .forms import Item_Form
-
-from articles.views
 
 from django.urls import reverse_lazy
 
-class ItemCreation(CreateView):
-    model = Item
-    form_class = Item_Form
+#class ItemCreation(CreateView):
+   # model = Item
+  #  form_class = Item_Form
     #success_url = reverse_lazy("item:index")
 
 class Paint(View):

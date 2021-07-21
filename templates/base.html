@@ -7,6 +7,12 @@
         WeZdoms
         {% endblock %}
     </title>
+    <script>
+    /*
+        alert("Hello visitor!");
+    */
+    </script>
+
 </head>
 <body>
     {% load static %}
@@ -32,5 +38,8 @@
         <h5>Не важно где мы, важнее смысл наших слов</h5>
         {{ my_copyright }}
     </footer>
+    <div id="forJS">NO CONTENT</div>
+    <!-- <script>alert('click ok');</script> -->
+    <script type="text/javascript" src="{% static 'app.js' %}"></script>
 </body>
 </html>

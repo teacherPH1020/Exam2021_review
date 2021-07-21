@@ -23,7 +23,7 @@ if settings.DEBUG:
     import debug_toolbar
 
 urlpatterns = [
-    path('add/item', views.ItemCreation.as_view()),
+  #  path('add/item', views.ItemCreation.as_view()),
     path('color/red', views.Red.as_view()),
     path('color/pink', views.Red.as_view(color='pink')),
     path('color/blue', views.Blue.as_view()),

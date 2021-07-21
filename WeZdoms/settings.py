@@ -159,7 +159,7 @@ if DEBUG:
     mimetypes.add_type("application/javascript", ".js", True)
 
 def show_toolbar(request):
-    return True
+    return False
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
