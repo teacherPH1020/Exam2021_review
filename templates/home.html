@@ -27,4 +27,15 @@
     {% firstof a b c "all empty" %}
     {% firstof a b c as var %}
     <p>{{ var|wordwrap:5 }}</p>
+   <article>
+       <form method="post" action="/rel/count_yes">
+           {% csrf_token %}
+           <input type="submit" value="yes">
+       </form>
+       <form method="post" action="/rel/count_no">
+           {% csrf_token %}
+           <input id="who" name="who" type="hidden" value="sergey">
+           <input type="submit" value="no">
+       </form>
+   </article>
 {% endblock %}

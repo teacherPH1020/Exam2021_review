@@ -3,6 +3,12 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
+class Logging(models.Model):
+    who = models.IntegerField(default=-1)
+    yes = models.IntegerField(default=0)
+    no  = models.IntegerField(default=0)
+
 class Decanat(models.Model):
     name = models.CharField(max_length=32)
 

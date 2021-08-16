@@ -24,6 +24,8 @@ if settings.DEBUG:
 
 urlpatterns = [
   #  path('add/item', views.ItemCreation.as_view()),
+    path('rel/count_yes', views.log_me_yes),
+    path('rel/count_no', views.log_me_no),
     path('color/red', views.Red.as_view()),
     path('color/pink', views.Red.as_view(color='pink')),
     path('color/blue', views.Blue.as_view()),

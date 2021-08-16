@@ -4,7 +4,7 @@ from .view import add
 from django.http import HttpResponse
 from .forms import ContactForm, SimpleForm
 import json
-
+from .models import Logging
 from django.views import View
 from django.views.generic.edit import CreateView
 from .models import Item
@@ -31,6 +31,18 @@ class Blue(Paint):
 #from django.http import request as Request
 
 # Create your view here.
+def log_me_yes(request):
+    if request.method == "POST":
+        who_id = request.POST.get('who')
+        print(who_id)
+    else:
+        pass
+    return HttpResponse(str("you were counted"))
+
+def log_me_no(request):
+    return log_me_yes(request)
+
+
 def index(request):
     #print(dir(Request))
     #print(request.META)
@@ -38,7 +50,8 @@ def index(request):
     b=4
     c = add.add_2(a,b)
     print(request.user)
-    return HttpResponse(str(c))
+
+    return redirect("/rel/count_yes")
 
 def contact_form(request):
     if request.method == 'POST':
