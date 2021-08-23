@@ -18,13 +18,15 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 from rel import views
+from ledger import views as ledger_views
 
 if settings.DEBUG:
     import debug_toolbar
 
 urlpatterns = [
   #  path('add/item', views.ItemCreation.as_view()),
-    path('rel/count_yes', views.log_me_yes),
+    path('ledger/randomize', ledger_views.randomize),
+    path('ledger/', ledger_views.form),
     path('rel/count_no', views.log_me_no),
     path('color/red', views.Red.as_view()),
     path('color/pink', views.Red.as_view(color='pink')),

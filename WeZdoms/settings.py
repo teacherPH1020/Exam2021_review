@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     ### place to add apps
+    'ledger',
     'rel',
     'debug_toolbar',
     'django.contrib.admin',
